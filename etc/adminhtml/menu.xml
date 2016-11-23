@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu>
+		<add id="IP2Location_CountryStateBlocker::main_menu" title="IP2Location Country-State Blocker" module="IP2Location_CountryStateBlocker" sortOrder="20" resource="IP2Location_CountryStateBlocker::blocker" />
+		<add id="IP2Location_CountryStateBlocker::add_rule" title="Add Rule" module="IP2Location_CountryStateBlocker" sortOrder="1" parent="IP2Location_CountryStateBlocker::main_menu" action="blocker/rule/new" resource="IP2Location_CountryStateBlocker::manage_rule" />
+		<add id="IP2Location_CountryStateBlocker::manage_rule" title="Manage Rule" module="IP2Location_CountryStateBlocker" sortOrder="2" parent="IP2Location_CountryStateBlocker::main_menu" action="blocker/rule/index" resource="IP2Location_CountryStateBlocker::manage_rule" />
+	</menu>
+</config>

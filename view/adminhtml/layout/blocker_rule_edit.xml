@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+        <css src="IP2Location_CountryStateBlocker\css\chosen.css" />
+    </head>
+	<body>
+		<referenceContainer name="left">
+			<block class="IP2Location\CountryStateBlocker\Block\Adminhtml\Rule\Edit\Tabs" name="ip2location_countrystateblocker_rule.edit.tabs"/>
+		</referenceContainer>
+		<referenceContainer name="content">
+			<block class="IP2Location\CountryStateBlocker\Block\Adminhtml\Rule\Edit" name="ip2location_countrystateblocker_rule.edit"/>
+		</referenceContainer>
+	</body>
+</page>

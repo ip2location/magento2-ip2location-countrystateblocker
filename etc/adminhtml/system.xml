@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="ip2location" translate="label" sortOrder="999999">
+			<label>IP2Location Country-State Blocker</label>
+		</tab>
+		<section id="ip2location_countrystateblocker" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Settings</label>
+			<tab>ip2location</tab>
+			<resource>IP2Location_CountryStateBlocker::settings</resource>
+			<group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Settings</label>
+				<field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="method" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Lookup Method</label>
+					<source_model>IP2Location\CountryStateBlocker\Model\Config\Source\LookupMethod</source_model>
+				</field>
+				<field id="databaseLocation" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Database Location</label>
+					<comment>Download IP2Location LITE DB1 Binary database for FREE from http://lite.ip2location.com or subscribe commercial DB1 database from http://www.ip2location.com with higher accuracy.</comment>
+					<backend_model>IP2Location\CountryStateBlocker\Model\Config\Backend\DatabaseLocation</backend_model>
+				</field>
+				<field id="apiKey" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>API Key</label>
+					<comment>IP2Location Web Service API key.</comment>
+					<backend_model>IP2Location\CountryStateBlocker\Model\Config\Backend\ApiKey</backend_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
+

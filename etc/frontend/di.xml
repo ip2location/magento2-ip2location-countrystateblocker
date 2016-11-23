@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\App\FrontControllerInterface">
+		<plugin name="ip2location_countrystateblocker_app_frontControllerInterface" type="IP2Location\CountryStateBlocker\App\FrontController\Plugin" sortOrder="1" disabled="false" />
+	</type>
+</config>
