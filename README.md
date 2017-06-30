@@ -12,9 +12,9 @@ This plugin support the use of [IP2Location Free LITE BIN database](http://lite.
 
 ## Installation Guide
 
-1. Upload the folder `IP2Location` to Magento installation directory `/app/code`.
+1. Upload `app` folder into Magento installation directotry.
 
-2. Run command line and navigate to Magento installation directory.
+2. Open terminal or command line then navigate to Magento installation directory.
 
 3. Enable IP2Location CountryStateBlocker extension by following commands,
 
@@ -24,7 +24,7 @@ This plugin support the use of [IP2Location Free LITE BIN database](http://lite.
    php -q bin/magento setup:upgrade
    ```
 
-4. Login as administrator and navigate to Store > Configuration > IP2Location Country-State Blocker > Settings.
+4. Open your web browser, login to Magento as administrator and navigate to Store > Configuration > IP2Location Country-State Blocker > Settings.
 
 5. Configure the correct database path and API key.
 
