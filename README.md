@@ -11,7 +11,7 @@ This plugin support the use of [IP2Location Free LITE BIN database](http://lite.
 * IP2Location web service registration path: http://www.ip2location.com/web-service
 
 ## IPv4 BIN vs IPv6 BIN
-====================
+
 Use the IPv4 BIN file if you just need to query IPv4 addresses.
 
 Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
