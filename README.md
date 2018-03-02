@@ -5,10 +5,10 @@ This plugin enable Magento users to easily redirect or block visitors based on t
 * Support multiple rules for blocking/redirection
 * Flexible way to define your source URLs for blocking/redirection, i.e., exact match or regular expression.
 
-This plugin support the use of [IP2Location Free LITE BIN database](http://lite.ip2location.com) or [IP2Location web service](http://www.ip2location.com/web-service) for geolocation lookup.
+This plugin support the use of [IP2Location Free LITE BIN database](https://lite.ip2location.com) or [IP2Location web service](https://www.ip2location.com/web-service) for geolocation lookup.
 
-* IP2Location LITE BIN download path: http://lite.ip2location.com
-* IP2Location web service registration path: http://www.ip2location.com/web-service
+* IP2Location LITE BIN download path: https://lite.ip2location.com
+* IP2Location web service registration path: https://www.ip2location.com/web-service
 
 ## IPv4 BIN vs IPv6 BIN
 
