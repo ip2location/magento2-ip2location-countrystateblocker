@@ -58,7 +58,7 @@ class Plugin
 				$ch = curl_init();
 				curl_setopt_array($ch, array(
 					CURLOPT_HEADER			=> 0,
-					CURLOPT_URL				=> 'http://api.ip2location.com/?' . http_build_query(array(
+					CURLOPT_URL				=> 'http://api.ip2location.com/v2/?' . http_build_query(array(
 												'key'		=> $this->_dataHelper->getAPIKey(),
 												'ip'		=> $ip,
 												'format'	=> 'json',
