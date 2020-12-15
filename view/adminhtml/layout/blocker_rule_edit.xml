@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+        <css src="Hexasoft_IP2LocationCountryBlocker\css\chosen.css" />
+    </head>
+	<body>
+		<referenceContainer name="left">
+			<block class="Hexasoft\IP2LocationCountryBlocker\Block\Adminhtml\Rule\Edit\Tabs" name="hexasoft_ip2locationcountryblocker_rule.edit.tabs"/>
+		</referenceContainer>
+		<referenceContainer name="content">
+			<block class="Hexasoft\IP2LocationCountryBlocker\Block\Adminhtml\Rule\Edit" name="hexasoft_ip2locationcountryblocker_rule.edit"/>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,3 +1,5 @@
+# IP2Location Country Blocker
+
 This plugin enable Magento users to easily redirect or block visitors based on their geo location. Below are the key features of this plugin
 
 * Redirect or block visitors by country
@@ -10,27 +12,33 @@ This plugin support the use of [IP2Location Free LITE BIN database](https://lite
 * IP2Location LITE BIN download path: https://lite.ip2location.com
 * IP2Location web service registration path: https://www.ip2location.com/web-service
 
+
+
 ## IPv4 BIN vs IPv6 BIN
 
 Use the IPv4 BIN file if you just need to query IPv4 addresses.
 
 Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
 
+
+
 ## Installation Guide
 
-1. Upload `app` folder into Magento installation directotry.
+1. Under the Magento installation directory, please sub directory `app/code/Hexasoft/IP2LocationCountryBlocker`.
 
-2. Open terminal or command line then navigate to Magento installation directory.
+2. Upload the files in this repository to that directory.
 
-3. Enable IP2Location CountryStateBlocker extension by following commands,
+3. Open terminal or command line then navigate to Magento installation directory.
+
+4. Enable IP2Location Country Blocker extension by following commands,
 
    ```
    php -q bin/magento cache:disable
-   php -q bin/magento module:enable --clear-static-content IP2Location_CountryStateBlocker
+   php -q bin/magento module:enable --clear-static-content Hexasoft_IP2LocationCountryBlocker
    php -q bin/magento setup:upgrade
+   php -q bin/magento cache:enable
    ```
 
-4. Open your web browser, login to Magento as administrator and navigate to Store > Configuration > IP2Location Country-State Blocker > Settings.
+5. Open your web browser, login to Magento as administrator and navigate to Store > Configuration > IP2Location Country Blocker > Settings.
 
-5. Configure the correct database path and API key.
-
+6. Configure the correct database path and API key.

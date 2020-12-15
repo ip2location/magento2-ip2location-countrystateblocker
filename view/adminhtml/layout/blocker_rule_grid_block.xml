@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="hexasoft_ip2locationcountryblocker_rule.grid.container">
+			<block class="Magento\Backend\Block\Widget\Grid" name="hexasoft_ip2locationcountryblocker_rule.grid" as="grid">
+				<arguments>
+					<argument name="id" xsi:type="string">ruleGrid</argument>
+					<argument name="dataSource" xsi:type="object">Hexasoft\IP2LocationCountryBlocker\Model\Resource\Rule\Collection</argument>
+					<argument name="default_sort" xsi:type="string">id</argument>
+					<argument name="default_dir" xsi:type="string">desc</argument>
+					<argument name="save_parameters_in_session" xsi:type="boolean">true</argument>
+					<argument name="use_ajax" xsi:type="boolean">true</argument>
+					<argument name="grid_url" xsi:type="url" path="*/*/grid">
+						<param name="_current">1</param>
+					</argument>
+				</arguments>
+				<block class="Magento\Backend\Block\Widget\Grid\Massaction" name="hexasoft_ip2locationcountryblocker_rule.grid.massaction" as="grid.massaction">
+					<arguments>
+						<argument name="massaction_id_field" xsi:type="string">id</argument>
+						<argument name="form_field_name" xsi:type="string">rule</argument>
+						<argument name="options" xsi:type="array">
+							<item name="delete" xsi:type="array">
+								<item name="label" xsi:type="string" translate="true">Delete</item>
+								<item name="url" xsi:type="string">*/*/massDelete</item>
+								<item name="confirm" xsi:type="string" translate="true">Are you sure you want to delete?</item>
+							</item>
+						</argument>
+					</arguments>
+				</block>
+				<block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="hexasoft_ip2locationcountryblocker_rule.grid.columnSet" as="grid.columnSet">
+					<arguments>
+						<argument name="rowUrl" xsi:type="array">
+							<item name="path" xsi:type="string">*/*/edit</item>
+							<item name="extraParamsTemplate" xsi:type="array">
+								<item name="id" xsi:type="string">getId</item>
+							</item>
+						</argument>
+					</arguments>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="origins">
+						<arguments>
+							<argument name="sortable" xsi:type="string">0</argument>
+							<argument name="header" xsi:type="string" translate="true">Origins</argument>
+							<argument name="index" xsi:type="string">origins</argument>
+							<argument name="type" xsi:type="string">options</argument>
+							<argument name="options" xsi:type="options" model="Hexasoft\IP2LocationCountryBlocker\Model\System\Config\Location" />
+							<argument name="renderer" xsi:type="string">Hexasoft\IP2LocationCountryBlocker\Block\Widget\Grid\Column\Renderer\Origins</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="mode">
+						<arguments>
+							<argument name="header" xsi:type="string" translate="true">Mode</argument>
+							<argument name="index" xsi:type="string">mode</argument>
+							<argument name="type" xsi:type="string">options</argument>
+							<argument name="options" xsi:type="options" model="Hexasoft\IP2LocationCountryBlocker\Model\System\Config\Mode" />
+						</arguments>
+					</block>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="from">
+						<arguments>
+							<argument name="header" xsi:type="string" translate="true">From</argument>
+							<argument name="index" xsi:type="string">from</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="to">
+						<arguments>
+							<argument name="header" xsi:type="string" translate="true">To</argument>
+							<argument name="index" xsi:type="string">to</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="code">
+						<arguments>
+							<argument name="header" xsi:type="string" translate="true">Code</argument>
+							<argument name="index" xsi:type="string">code</argument>
+							<argument name="type" xsi:type="string">options</argument>
+							<argument name="options" xsi:type="options" model="Hexasoft\IP2LocationCountryBlocker\Model\System\Config\Code" />
+						</arguments>
+					</block>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="status">
+						<arguments>
+							<argument name="header" xsi:type="string" translate="true">Status</argument>
+							<argument name="index" xsi:type="string">status</argument>
+							<argument name="type" xsi:type="string">options</argument>
+							<argument name="options" xsi:type="options" model="Hexasoft\IP2LocationCountryBlocker\Model\System\Config\Status" />
+						</arguments>
+					</block>
+					<block class="Magento\Backend\Block\Widget\Grid\Column" as="action" acl="Hexasoft_IP2LocationCountryBlocker::manage_rule">
+						<arguments>
+							<argument name="id" xsi:type="string">action</argument>
+							<argument name="header" xsi:type="string" translate="true">Action</argument>
+							<argument name="type" xsi:type="string">action</argument>
+							<argument name="getter" xsi:type="string">getId</argument>
+							<argument name="filter" xsi:type="boolean">false</argument>
+							<argument name="sortable" xsi:type="boolean">false</argument>
+							<argument name="index" xsi:type="string">stores</argument>
+							<argument name="is_system" xsi:type="boolean">true</argument>
+							<argument name="actions" xsi:type="array">
+								<item name="view_action" xsi:type="array">
+									<item name="caption" xsi:type="string" translate="true">Edit</item>
+									<item name="url" xsi:type="array">
+										<item name="base" xsi:type="string">*/*/edit</item>
+									</item>
+									<item name="field" xsi:type="string">id</item>
+								</item>
+							</argument>
+							<argument name="header_css_class" xsi:type="string">col-actions</argument>
+							<argument name="column_css_class" xsi:type="string">col-actions</argument>
+						</arguments>
+					</block>
+				</block>
+			</block>
+		</referenceBlock>
+	</body>
+</page>

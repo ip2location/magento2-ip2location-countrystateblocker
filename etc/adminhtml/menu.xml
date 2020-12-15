@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu>
+		<add id="Hexasoft_IP2LocationCountryBlocker::main_menu" title="IP2Location Country Blocker" module="Hexasoft_IP2LocationCountryBlocker" sortOrder="20" resource="Hexasoft_IP2LocationCountryBlocker::blocker" />
+		<add id="Hexasoft_IP2LocationCountryBlocker::add_rule" title="Add Rule" module="Hexasoft_IP2LocationCountryBlocker" sortOrder="1" parent="Hexasoft_IP2LocationCountryBlocker::main_menu" action="blocker/rule/new" resource="Hexasoft_IP2LocationCountryBlocker::manage_rule" />
+		<add id="Hexasoft_IP2LocationCountryBlocker::manage_rule" title="Manage Rule" module="Hexasoft_IP2LocationCountryBlocker" sortOrder="2" parent="Hexasoft_IP2LocationCountryBlocker::main_menu" action="blocker/rule/index" resource="Hexasoft_IP2LocationCountryBlocker::manage_rule" />
+	</menu>
+</config>
