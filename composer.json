@@ -1,24 +1,23 @@
 {
-  "name": "hexasoft/ip2location-countryblocker",
-  "description": "Block visitors by country or state.",
-  "keywords": ["magento2", "ip2location", "redirector", "blocker"],
-  "type": "magento2-module",
-  "version": "1.0.0",
-  "license":["MIT"],
-  "require": {
-    "php": "~7",
-    "magento/framework": "~100.0.4"
-  },
-  "authors": [
-    {
-      "name": "IP2Location",
-      "homepage": "http://www.ip2location.com/"
-    }
-  ],
-   "autoload": {
-    "files": [ "registration.php" ],
-    "psr-4": {
-      "Hexasoft\\IP2LocationCountryBlocker\\": ""
-    }
-  }
+	"name": "hexasoft/ip2location-countryblocker",
+	"description": "Block visitors by country.",
+	"keywords": ["magento2", "ip2location", "redirection", "blocker"],
+	"type": "magento2-module",
+	"version": "1.0.0",
+	"license":["MIT"],
+	"require": {
+		"ip2location/ip2location-php": "~8"
+	},
+	"authors": [{
+			"name": "IP2Location",
+			"homepage": "http://www.ip2location.com/"
+	}],
+	 "autoload": {
+		"files": [
+			"registration.php"
+		],
+		"psr-4": {
+			"Hexasoft\\IP2LocationCountryBlocker\\": ""
+		}
+	}
 }

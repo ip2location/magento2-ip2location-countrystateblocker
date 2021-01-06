@@ -1,36 +1,46 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
 	<system>
-		<tab id="ip2location" translate="label" sortOrder="999999">
-			<label>IP2Location Country Blocker</label>
+		<tab id="hexasoft" translate="label" sortOrder="155">
+			<label>IP2Location</label>
 		</tab>
-		<section id="hexasoft_ip2locationcountryblocker" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+		<section id="ip2locationcountryblocker" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
 			<class>separator-top</class>
-			<label>Settings</label>
-			<tab>ip2location</tab>
-			<resource>Hexasoft_IP2LocationCountryBlocker::settings</resource>
-			<group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Country Blocker</label>
+			<tab>hexasoft</tab>
+			<resource>Hexasoft_IP2LocationCountryBlocker::config_ip2locationcountryblocker</resource>
+			<group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
 				<label>Settings</label>
-				<field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Enabled</label>
+				<field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Enable Country Blocker</label>
 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
 				</field>
-				<field id="method" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Lookup Method</label>
-					<source_model>Hexasoft\IP2LocationCountryBlocker\Model\Config\Source\LookupMethod</source_model>
+				<field id="countries" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Countries</label>
+					<source_model>\Magento\Directory\Model\Config\Source\Country</source_model>
+					<comment>Select countries you want to block. Press CTRL + Click (Windows/Linux), or CMD + Click (macOS) for multiple selection.</comment>
 				</field>
-				<field id="databaseLocation" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Database Location</label>
-					<comment>Download IP2Location LITE DB1 Binary database for FREE from http://lite.ip2location.com or subscribe commercial DB1 database from http://www.ip2location.com with higher accuracy.</comment>
-					<backend_model>Hexasoft\IP2LocationCountryBlocker\Model\Config\Backend\DatabaseLocation</backend_model>
+				<field id="ip_blacklist" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>IP Blacklist</label>
+					<comment>Enter IP address to block. One IP address per line. Support wildcard and CIDR. Example: 1.2.3.4, 1.2.3.*, 1.</comment>
 				</field>
-				<field id="apiKey" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="database" translate="label comment" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>BIN Database</label>
+					<comment><![CDATA[<p>The absolute path to IP2Location BIN database. Download free <a href="https://lite.ip2location.com/database/ip-country" target="_blank">DB1 LITE</a> or <a href="https://www.ip2location.com/database/db1-ip-country" target="_blank">commercial DB1</a>.</p>]]></comment>
+				</field>
+				<field id="api_key" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
 					<label>API Key</label>
-					<comment>IP2Location Web Service API key.</comment>
-					<backend_model>Hexasoft\IP2LocationCountryBlocker\Model\Config\Backend\ApiKey</backend_model>
+					<comment><![CDATA[<p>Your IP2Location <a href='www.ip2location.com/web-service/' target='_blank'>Web Service</a> API key.</p>]]></comment>
+				</field>
+			</group>
+			<group id="redirection" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+				<label>Redirection</label>
+				<field id="enable_redirection" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Enable Country Redirection</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Visitor will be redirected to your store that having same country with them.</comment>
 				</field>
 			</group>
 		</section>
 	</system>
 </config>
-

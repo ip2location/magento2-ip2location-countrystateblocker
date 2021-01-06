@@ -1,4 +1,13 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
+<!--
+/**
+ *
+ * @category   Hexasoft
+ * @package    Hexasoft_IP2LocationCountryBlocker
+ * @author     IP2Location
+ * @copyright  Copyright (c) IP2Location.com. ( https://www.ip2location.com ).
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-	<module name="Hexasoft_IP2LocationCountryBlocker" setup_version="1.0.0" />
+	<module name="Hexasoft_IP2LocationCountryBlocker" setup_version="1.0.0"/>
 </config>
