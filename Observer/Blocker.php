@@ -109,8 +109,22 @@ class Blocker implements ObserverInterface
 	{
 		$apiKey = $this->helper->getApiKey();
 
-		if ($apiKey) {
-			$json = json_decode($this->curl_get_contents('https://api.ip2location.com/v2/?key=' . $apiKey . '&ip=' . $ip));
+		if (preg_match('/^[A-Z0-9]{10}$/', $apiKey)) {
+			$json = json_decode($this->curl_get_contents('https://api.ip2location.com/v2/?' . http_build_query([
+				'key' => $apiKey,
+				'ip'  => $ip,
+			])));
+
+			if (isset($json->country_code) && \strlen($json->country_code) == 2) {
+				return $json->country_code;
+			}
+		}
+
+		if (preg_match('/^[A-F0-9]{32}$/', $apiKey)) {
+			$json = json_decode($this->curl_get_contents('https://api.ip2location.io/?' . http_build_query([
+				'key' => $apiKey,
+				'ip'  => $ip,
+			])));
 
 			if (isset($json->country_code) && \strlen($json->country_code) == 2) {
 				return $json->country_code;
@@ -132,10 +146,10 @@ class Blocker implements ObserverInterface
 	public function curl_get_contents($url)
 	{
 		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		$data = curl_exec($ch);
 		curl_close($ch);
 

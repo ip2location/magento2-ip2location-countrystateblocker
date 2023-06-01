@@ -30,7 +30,7 @@
 				</field>
 				<field id="api_key" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
 					<label>API Key</label>
-					<comment><![CDATA[<p>Your IP2Location <a href='www.ip2location.com/web-service/' target='_blank'>Web Service</a> API key.</p>]]></comment>
+					<comment><![CDATA[<p>Your IP2Location <a href='https://www.ip2location.io' target='_blank'>Web Service</a> API key.</p>]]></comment>
 				</field>
 			</group>
 			<group id="redirection" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">

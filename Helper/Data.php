@@ -79,7 +79,7 @@ class Data extends AbstractHelper
 	{
 		$rawIpList = $this->scopeConfig->getValue(self::XML_PATH_IP_BLACKLIST, ScopeInterface::SCOPE_STORE, $storeId);
 
-		$ipList = array_filter((array) preg_split(self::IP_LIST_REGEXP_DELIMITER, $rawIpList));
+		$ipList = array_filter((array) preg_split(self::IP_LIST_REGEXP_DELIMITER, (string) $rawIpList));
 
 		return $ipList;
 	}
